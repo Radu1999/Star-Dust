@@ -1,0 +1,14 @@
+// Chivereanu Radu-Gabriel
+Task1
+   Rezolvarea taskului se bazeaza pe ideea ca daca un pointer de tip char* primeste adresa unui int, acesta este capabil sa vada 1 byte din acel int ( dimensiunea unui char este de un byte ). Astfel am citit unul dupa altul numerele in hexadecimal ( %X ) in variabila hexa, iar si i am dat de fiecare data pointerului bytes adresa lui hexa. Astfel, bytes(bytes[0]) nu vede decat primul byte din hexa, bytes+1(bytes[1]) al doilea, bytes+2(bytes[2]) al treilea si bytes+3(bytes[3]) al patrulea. Acesti bytes i am retinut intr o matrice alocata dinamic byte_mat, matrice ce ne va fi folositoare si la celelalte taskuri.
+   Utilizand functia task1 am parcurs matricea bytes_mat pe contur si am calculat suma bytes-ilor si numarul lor, returnand astfel media aritmetica ceruta.
+
+Task2
+   Avand in vedere ca operatia Modify poate adauga in afara matricei bytes_mat, trebuie sa folosim realloc pt a modifica dimensiunile. Din moment ce folosesc realloc intr o functie am utilizat pointer triplu ( lucru invatat la laborator ). 
+   Functia transform_index modeleaza indexul citit in functie de operatie astfel incat sa returneze pozitia matrice unde se vor face modificarile.
+   Partea cruciala a acestui task este utilizarea realloc pentru a mari dinamic capacitatea pe linie atunci cand este cazul in operatia Modify.
+   Functia reforge reconstruieste matricea in format initial si se bazeaza pe aceeasi obsevatie de la taskul 1, numai ca de data aceasta un pointer int* primeste adresa unui element char. Pointerul int vede primii 4 bytes de la adresa respectiva reusind astfel sa reformeze intregul.
+
+Task3
+   Acest task se bazeaza pe un algoritm de fill.
+   In functia fill cu ajutorul a 2 cozi alocate dinamic am umplut fiecare suprafata de 0 uri numarandu le si retinand maximul.
